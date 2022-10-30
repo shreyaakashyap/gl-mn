@@ -1,0 +1,138 @@
+<html>
+
+<head>
+    <title>Google Lense vs. Mobilenet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <center>
+        <h3 class="btn btn-success heading">Google Lense vs. Mobilenet
+            <hr>
+            <br>
+        </h3>
+        <br><br>
+        <img src="https://cdn.arstechnica.net/wp-content/uploads/2021/10/Google-Lens-760x380.jpg" style="width: 300px;">
+        <br>
+        <p style="font-size: 20px;">vs.</p>
+        </br>
+        <button class="btn btn-primary" style="font-family: sans-serif;">Mobilenet</button>
+        <hr>
+
+
+    </center>
+    <section id="tester1" class="btn btn-secondary" style="background-color: grey; color: white; width: 100%;">
+        <div style="text-align: left;">
+            <span>
+            <p>1. Test image</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p>Google Lense: </p> 
+            <p id="outputg1"></p> 
+            <p>Mobilenet: </p> 
+            <p id="outputm1"></p>
+        
+            <img src="WIN_20221016_14_40_27_Pro.jpg" style="border-radius: 20px; width: 300px; height: 500px;">
+        </div>
+       <p>Details:</p> 
+       <p class="output1"></p>
+        
+
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="tester2" class="btn btn-secondary" style="background-color: grey; color: white; width: 100%;">
+        <div style="text-align: left;">
+            <span>
+            <p>2. Test image</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p>Google Lense: </p> 
+            <p id="outputg2"></p> 
+            <p>Mobilenet: </p> 
+            <p id="outputm2"></p>
+        
+            <img src="https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/advice/maps-satellite-images/satellite-image-of-globe.jpg" style="border-radius: 20px; width: 300px; height: 500px;">
+        </div>
+       <p>Details:</p> 
+       <p class="output2"></p>
+        
+
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="tester3" class="btn btn-secondary" style="background-color: grey; color: white; width: 100%;">
+        <div style="text-align: left;">
+            <span>
+            <p>3. Test image</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p>Google Lense: </p> 
+            <p id="outputg3"></p> 
+            <p>Mobilenet: </p> 
+            <p id="outputm3"></p>
+        
+            <img src="https://www.schoolphotoproject.com/_picture-of-clouds-sky/clouds-sky-photo5-l.jpg  " style="border-radius: 20px; width: 300px; height: 500px;">
+        </div>
+       <p>Details:</p> 
+       <p class="output3"></p>
+        
+
+    </section> <br>
+    <br>
+    <br>
+    <br>
+    <section id="tester4" class="btn btn-secondary" style="background-color: grey; color: white; width: 100%;">
+        <div style="text-align: left;">
+            <span>
+            <p>4. Test image</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p>Google Lense: </p> 
+            <p id="outputg4"></p> 
+            <p>Mobilenet: </p> 
+            <p id="outputm4"></p>
+        
+            <img src="https://th.bing.com/th/id/R.5e0a799f3d534f239d16956ace6b8a8f?rik=pdjVukHCfTKuOw&riu=http%3a%2f%2fcdn.thinglink.me%2fapi%2fimage%2f479353026285404161%2f1024%2f10%2fscaletowidth%2f0%2f0%2f1%2f1%2ffalse%2ftrue%3fwait%3dtrue&ehk=l0qlnh5dfbnyUpikpXKyqk3oSNv0Ub9B%2bqlTlmUbKsw%3d&risl=&pid=ImgRaw&r=0" style="border-radius: 20px; width: 300px; height: 500px;">
+        </div>
+       <p>Details:</p> 
+       <p class="output4"></p>
+        
+
+    </section> <br>
+    <br>
+    <br>
+    <br>
+    <section id="tester5" class="btn btn-secondary" style="background-color: grey; color: white; width: 100%;">
+        <div style="text-align: left;">
+            <span>
+            <p>5. Test image</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <p>Google Lense: </p> 
+            <p id="outputg5"></p> 
+            <p>Mobilenet: </p> 
+            <p id="outputm5"></p>
+        
+            <img src="https://th.bing.com/th/id/R.d70c39eb0efa38d5df167ed593d66d34?rik=rgnlRhN7Z%2bLBmA&riu=http%3a%2f%2fcdn2.shopify.com%2fs%2ffiles%2f1%2f0011%2f2341%2f8172%2fproducts%2fCN363-1_1024x1024.jpg%3fv%3d1523413681&ehk=rZ7cnyXk0JTKDDkftJUrIrGBlbSwi8RDzyTw7ANNplo%3d&risl=&pid=ImgRaw&r=0" style="border-radius: 20px; width: 300px; height: 500px;">
+        </div>
+       <p>Details:</p> 
+       <p class="output5"></p>
+        
+
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="copy_right_footer">
+        Developed By: Shreyaa Kashyap
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
